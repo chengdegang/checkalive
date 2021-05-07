@@ -2,7 +2,6 @@
 from smtplib import SMTP_SSL
 from email.mime.text import MIMEText
 import smtplib
-import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
@@ -31,7 +30,7 @@ text_plain = MIMEText(text,'plain', 'utf-8')
 msg.attach(text_plain)
 
 smtp = smtplib.SMTP()
-smtp.connect('smtp.exmail.qq.com,465')
+smtp.connect(smtpserver,'465')
 #我们用set_debuglevel(1)就可以打印出和SMTP服务器交互的所有信息。
 #smtp.set_debuglevel(1)
 smtp.login(username, password)
