@@ -1,35 +1,36 @@
-from smtplib import SMTP_SSL
-from email.mime.text import MIMEText
+# from smtplib import SMTP_SSL
+# from email.mime.text import MIMEText
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from email.header import Header
+# from email.mime.image import MIMEImage
+# from email.header import Header
 
 #设置smtplib所需的参数
 #下面的发件人，收件人是用于邮件传输的。
-# smtpserver = 'smtp.qq.com'
-# username = 'chengdgccc@qq.com'
-# password='glgfdpxlnhiogaji'
-# sender='chengdgccc@qq.com'
-# receivers = ['chengdegang@ezxr.com']
-
-smtpserver = 'smtphz.qiye.163.com'
-username = 'chengdegang@ezxr.com'
-password= 'Bbu3Cu8CzYtydxLp'
-sender= 'chengdegang@ezxr.com'
+smtpserver = 'smtp.qq.com'
+username = 'chengdgccc@qq.com'
+password='glgfdpxlnhiogaji'
+sender='chengdgccc@qq.com'
 receivers = ['chengdegang@ezxr.com']
+
+# smtpserver = 'smtphz.qiye.163.com'
+# username = 'chengdegang@ezxr.com'
+# password= 'Bbu3Cu8CzYtydxLp'
+# sender= 'chengdegang@ezxr.com'
+# receivers = ['chengdegang@ezxr.com']
 
 subject = 'Service check reminder'
 
 msg = MIMEMultipart('mixed')
 msg['Subject'] = subject
-msg['From'] = 'chengdegang@ezxr.com <chengdegang@ezxr.com>'
+msg['From'] = 'QA_CCC'
+# msg['From'] = 'chengdegang@ezxr.com <chengdegang@ezxr.com>'
 msg['To'] = 'qa'
 #收件人为多个收件人,通过join将列表转换为以;为间隔的字符串
 # msg['To'] = ";".join(receiver)
 
-text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.baidu.com"
+text = "Hi!\nHow are you?\nHere is the link you wanted:\nhttp://www.baidu.com\nces2055"
 text_plain = MIMEText(text,'plain', 'utf-8')
 msg.attach(text_plain)
 
